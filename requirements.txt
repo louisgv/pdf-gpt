@@ -1,8 +1,8 @@
-PyMuPDF
-numpy==1.19.5
-scikit-learn
+PyMuPDF==1.22.1
+numpy==1.23
+scikit-learn==1.2.2
 tensorflow>=2.0.0
-tensorflow-hub
+tensorflow-hub==0.13.0
 openai==0.10.2
-gradio
-
+gradio==3.27.0
+python-dotenv==1.0.0
