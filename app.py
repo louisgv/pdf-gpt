@@ -64,9 +64,12 @@ class SemanticSearch:
             'https://tfhub.dev/google/universal-sentence-encoder/4')
         self.fitted = False
 
-    def fit(self, data, batch=1000, n_neighbors=5):
+    def fit_data(self, data, batch=1000, n_neighbors=5):
         self.data = data
         self.embeddings = self.get_text_embedding(data, batch=batch)
+        self.fit(n_neighbors)
+
+    def fit(self, n_neighbors=5):
         n_neighbors = min(n_neighbors, len(self.embeddings))
         self.nn = NearestNeighbors(n_neighbors=n_neighbors)
         self.nn.fit(self.embeddings)
